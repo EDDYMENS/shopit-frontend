@@ -1,0 +1,124 @@
+html,
+body {
+    font-family: 'Roboto', sans-serif !important;
+    overflow-x: hidden;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.presenter {
+    color: #fff;
+    height: 500px;
+    background-image: url('../images/shoping.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.mask {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+
+.nav-item>.white {
+    color: #fff !important;
+}
+
+nav>.navbar-brand>.white {
+    color: #fff !important;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav-item>.nav-link {
+    color: #000 !important;
+}
+
+nav>.navbar-brand {
+    color: #000 !important;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.pitch-text {
+    margin-top: 200px;
+    font-size: 40px;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.product-image {
+    height: 150px;
+    width: 200px;
+}
+
+.bordered {
+    border: solid;
+}
+
+.nav-drop {
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+}
+
+.nav-drop>a {
+    color: white;
+}
+
+.cart-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+.cart-container:hover {
+    background: #ccc;
+}
+
+.counter {
+    margin-left: -10px;
+    margin-top: -12px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.edit-input {
+    width: 100px;
+}
+
+.edit-form,
+.meta-data {
+    display: none;
+}
+
+.pricing {
+    font-size: 18px;
+    font-weight: 100;
+    color: #808080;
+}
+
+.actual-price {
+    text-decoration: line-through;
+}
+
+.discount-price {
+    font-weight: bold;
+}
