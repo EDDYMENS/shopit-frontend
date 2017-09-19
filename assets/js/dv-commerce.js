@@ -1,5 +1,13 @@
-$(document).ready(function() {
 
+
+
+$(document).ready(function() {
+var imported = document.createElement('script');
+imported["className"] = 'devless-connection';
+imported.attributes['devless-con-token'] = {"value":"0cc39661d0556719cedbda4bfa463ac1"}
+imported.src = 'http://localhost:8080/js/devless-sdk.js';
+console.log(imported);
+document.body.appendChild(imported);
     dvInterceptQueryResponse = function(response) {
 
         if (Object.keys(response)[0] === 'products') {
@@ -116,8 +124,6 @@ $(document).ready(function() {
     }
 
 
-
-
     var app = new Vue({
         el: '#check-out',
         mounted: function() {
@@ -181,7 +187,6 @@ $(document).ready(function() {
         }
 
     })
-
 
 
 });

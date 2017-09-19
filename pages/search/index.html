@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Devless Ecommerce</title>
+    <title>All Brands</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,700i" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -22,7 +22,7 @@
                 Shop -it
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form id="searchForm" action="/pages/search?searchParam=name^" method="get" class="form-inline col-md-7 col-sm-12  ml-md-5 my-2 my-lg-0">
+            <form id="searchForm" action="/pages/search?searchParam=description^" method="get" class="form-inline col-md-7 col-sm-12  ml-md-5 my-2 my-lg-0">
                 <input class="form-control mr-sm-2 col-md-8 col-sm-10" id="query" name="q" placeholder="Search for Products">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -38,12 +38,6 @@
                       </a>
                     </div>
                 </li>
-                <li class="nav-item mx-2 my-sm-2">
-                    <a class="nav-link btn btn-outline-info" href="/pages/signin">Sign In <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item mx-2 my-sm-2">
-                    <a class="nav-link btn btn-outline-success" href="/pages/signup">Sign Up</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -51,7 +45,7 @@
     <div class="row justify-content-around dv-param:search:searchParam:get-all:shopit:inventory dv-label:products">
         <div class="product-list-item col-md-3 text-center card py-3 my-3 mx-3">
             <a href="/pages/product_details?product_id=var-id" class="var-id">
-                <img src="http://lorempixel.com/400/200/fashion" class="img-responsive 
+                <img src="" class="var-image_url img-responsive 
                 product-image mx-auto" alt="Image">
             </a>
             <a href="/pages/product_details?product_id=var-id" class="var-id">
@@ -85,7 +79,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue"></script>
-    <script src="http://localhost:8080/js/devless-sdk.js" class="devless-connection" devless-con-token="0cc39661d0556719cedbda4bfa463ac1"></script>
     <script src="/assets/js/dv-commerce.js" type="text/javascript">
     </script>
 </body>
