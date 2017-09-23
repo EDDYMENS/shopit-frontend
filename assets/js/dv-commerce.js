@@ -6,7 +6,6 @@ var imported = document.createElement('script');
 imported["className"] = 'devless-connection';
 imported.attributes['devless-con-token'] = {"value":"0cc39661d0556719cedbda4bfa463ac1"}
 imported.src = 'http://localhost:8080/js/devless-sdk.js';
-console.log(imported);
 document.body.appendChild(imported);
     dvInterceptQueryResponse = function(response) {
 
@@ -59,7 +58,10 @@ document.body.appendChild(imported);
         let itemPrice = $(this).children('.meta-data').children('.price').html();
         let itemName = $(this).children('.meta-data').children('.name').html();
         let itemId = $(this).children('.meta-data').children('.product-id').html();
-        addItem(itemId, itemName, itemPrice);
+        let color = $('.shirt-color').val();
+        let size  = $('.shirt-size').val();
+        console.log(size, color, this)
+        addItem(itemId, itemName, itemPrice, size, color);
         updateCartSize();
     });
 
@@ -73,19 +75,21 @@ document.body.appendChild(imported);
         return s;
     };
 
-    function addItem(id, name, price) {
+    function addItem(id, name, price, size, color) {
         let cart = getCart();
         itemsIndex = cart.items.findIndex((item, index) => {
             return name === item.name;
         });
         if (itemsIndex === -1) {
-            cart.items.push({ id, name, price, units: 1 });
+            cart.items.push({ id, name, price, size, color, units: 1 });
         } else {
             itemToUpdate = cart.items[itemsIndex];
             cart.items[itemsIndex] = {
                 id: itemToUpdate.id,
                 name: itemToUpdate.name,
                 price: itemToUpdate.price,
+                size:  itemToUpdate.size,
+                color: itemToUpdate.color,
                 units: itemToUpdate.units + 1
             };
         };
@@ -124,7 +128,7 @@ document.body.appendChild(imported);
     }
 
 
-    var app = new Vue({
+     app = new Vue({
         el: '#check-out',
         mounted: function() {
             let cart = getCart();
@@ -153,20 +157,22 @@ document.body.appendChild(imported);
                 this.showCart = !this.showCart;
             },
             submitPurchase: function() {
+               this.userInfo.country = "GH";
                 let data = {
                     cart: getCart(),
                     userInfo: this.userInfo
                 };
-                console.log(JSON.stringify(data));
                 this.submitted = true;
+                let message = (this.userInfo.payment == "1")? "Expect a payment prompt on your phone" : "Please pay through 0540420521"
                 SDK.call('shopit', 'checkout', [JSON.stringify(data)],
                     (response) => {
                         this.submitted = false;
                         swal(
                             'Order submitted',
-                            'Continue Shopping',
+                            message,
                             'success'
                         ).then(() => {
+                            localStorage.setItem('dv-cart', "");
                             window.location = '/';
                         });
                     }

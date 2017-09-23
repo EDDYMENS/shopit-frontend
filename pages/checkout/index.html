@@ -71,7 +71,7 @@
                 <tbody>
                     <tr v-for="(item, index) in cartItems">
                         <td>{{index + 1}}</td>
-                        <td>{{item.name}}</td>
+                        <td v-html="item.name"></td>
                         <td>
                             <input v-model.number="item.units" class="edit-input form-control" min="1" type="number" v-on:change="saveToCart" required step="1" placeholder="unit">
                         </td>
@@ -100,17 +100,26 @@
                     <br />
                     <input v-model="userInfo.phone" required class="form-control col-12" type="phone" placeholder="Phone (+233249908778)">
                     <br />
-                    <input v-model="userInfo.country" required class="form-control col-12" type="text" placeholder="Country">
+                    <input v-model="userInfo.country" value="Ghana" required class="form-control col-12" type="hidden" placeholder="Country">
                     <br />
                     <input v-model="userInfo.city" required class="form-control col-12" type="text" placeholder="City">
+
                     <br />
+                    <input v-model="userInfo.landmark" required class="form-control col-12" type="text" placeholder="Specify a landmark eg Close to Ghana Dubai(circle)">
+                    <br />
+                        <center class="text-muted">How are you paying </center>
+                    <select v-model="userInfo.payment" class="form-control">
+                        <option value="0">Mobile Money Agent</option>
+                        <option selected value="1">Mobile Money Account</option>
+                    </select><br>
+                    <textarea class="form-control" v-model="userInfo.orderNote" placeholder="Special Notes"></textarea>
+                    <br>
                     <button type="button" v-on:click="toggleCart" class="btn btn-primary  my-3">
                         <i class="fa fa-shopping-cart"></i> View Cart
                     </button>
                     <button type="submit" class="btn btn-success my-3">
                         <i v-if="!submitted" class="fa fa-check"></i>
-                        <i v-if="submitted" class="fa fa-spinner fa-spin" aria-hidden="true"></i> Done
-                    </button>
+                        <i v-if="submitted" class="fa fa-spinner fa-spin" aria-hidden="true"></i> Purchase                   </button>
                 </form>
             </div>
         </div>
