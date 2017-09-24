@@ -43,7 +43,7 @@
     </nav>
     <h4 class="text-center text-muted my-5">Shirt Details</h4>
     <div class="row justify-content-center 
-    dv-where:id:product_id:get-all:shopit:inventory">
+    dv-where:id:product_id:get-all:shopit:inventory dv-label:products">
         <div class="product-list-item col-md-6 card py-3 my-3 mx-3">
       
         <a class="lightbox" href="#product-image">
@@ -51,6 +51,7 @@
                 mx-auto" alt="Image">
         </a>
         </div>
+
         <div class="lightbox-target"  id="product-image">
    <img src="" class="var-image_url" width="800" height="800" />
    <a class="lightbox-close" href="#"></a>
@@ -60,11 +61,10 @@
             <h5 class="text-muted">Description</h5>
             <p><span class="var-description"></span></p>
             <h5><span class="text-muted">Price</span> : <span class="text-danger">GHS&cent;
+                <span class="var-purchased_price_value"></span>
                 <span class="var-html-price"></span>
             </span>
             </h5>
-           <span class="text-success discount-price"><span class="var-html-purchased_price"></span>
-
            </span>
 
             <div class="row">
@@ -96,9 +96,10 @@
                 <div class="meta-data">
                     <span class="product-id var-id"></span>
                     <span class="name var-name"></span>
-                    <span class="price var-price"></span>
+                    <span class="price var-purchased_price_value"></span>
                     <span class="var-discount"></span>
                     <span class="var-is_percentage"></span>
+
                 </div>
                 <i class="fa fa-shopping-cart"></i> Add to Cart
             </button>   
@@ -111,6 +112,7 @@
             <span class="badge badge-danger counter">0</span>
         </div>
     </a>
+
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
